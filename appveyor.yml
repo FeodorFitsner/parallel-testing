@@ -1,0 +1,14 @@
+# restore NuGet packages before running MSBuild
+before_build:
+  - nuget restore
+ 
+# package Web Application project for Web Deploy
+build:
+  verbosity: minimal
+
+# test in parallel
+test:
+  categories:
+    - [UI]
+    - [BL]
+    - [DAL]
